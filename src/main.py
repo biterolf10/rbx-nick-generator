@@ -30,10 +30,21 @@ def main():
   t.sleep(10)
   
   for i in range(attemps):
-    for _ in range(nicklen):
-      kb.write(letters[rng.randint(0, len(letters))-1])
+    nick = ""
     
-    t.sleep(2)    
+    for count in range(nicklen):
+      rngletter = None
+      if count==0:
+        rngletter = letters[rng.randint(0, len(letters))-2]
+      else:
+        rngletter = letters[rng.randint(0, len(letters))-1]
+      
+      nick += rngletter
+        
+        
+    kb.write(nick)
+    
+    t.sleep(.5)    
     
     if autoreg==True:
       register()
