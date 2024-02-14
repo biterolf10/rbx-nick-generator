@@ -1,5 +1,5 @@
 # rbx nick generator
- This program will generate username on [regestration page on roblox](https://www.roblox.com) for you new account
+ This program will generate username on regestration page on roblox for you new account
 
 ##  Usage
  1. Write some values about generated nick:
