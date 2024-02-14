@@ -29,17 +29,15 @@ def main():
   print("You have 10 second to go in roblox web page and click on nickname entry field")
   t.sleep(10)
   
+  startTime = t.process_time()
   for i in range(attemps):
     nick = ""
     
     for count in range(nicklen):
-      rngletter = None
-      if count==0:
-        rngletter = letters[rng.randint(0, len(letters))-2]
+      if int(count)==0 or int(count)==nicklen-1:
+        nick += letters[rng.randint(0, len(letters)-2)]
       else:
-        rngletter = letters[rng.randint(0, len(letters))-1]
-      
-      nick += rngletter
+        nick += letters[rng.randint(0, len(letters))-1]
         
         
     kb.write(nick)
@@ -54,5 +52,7 @@ def main():
         kb.write("\b")
     else:
       break
+  
+  print("Program works for " + str(t.process_time() - startTime) + "s")
 
 main()
